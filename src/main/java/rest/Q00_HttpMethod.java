@@ -5,6 +5,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import ejb.LibrarySessionBean;
+import remote.LibrarySessionBeanRemote;
+
 @Path("httpmethod")
 public class Q00_HttpMethod {
 
@@ -12,6 +15,7 @@ public class Q00_HttpMethod {
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON })
 	public void example01() {
-		System.out.println("hello world!!");
+		LibrarySessionBeanRemote obj = new LibrarySessionBean();
+		obj.addBook("hello world");
 	}
 }

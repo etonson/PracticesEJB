@@ -1,8 +1,5 @@
 package ejb;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.ejb.Stateless;
 
 import remote.LibrarySessionBeanRemote;
@@ -10,17 +7,10 @@ import remote.LibrarySessionBeanRemote;
 @Stateless
 public class LibrarySessionBean implements LibrarySessionBeanRemote {
 
-	List<String> bookShelf;
-
-	public LibrarySessionBean() {
-		bookShelf = new ArrayList<String>();
-	}
-
+	@Override
 	public void addBook(String bookName) {
-		bookShelf.add(bookName);
+		System.out.println(bookName);
+		
 	}
 
-	public List<String> getBooks() {
-		return bookShelf;
-	}
 }
